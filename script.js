@@ -15,6 +15,8 @@ var chosenstr = [];
 var rightplace = true;
 var highlightfalse = true;
 
+var method;
+
 
 $(function() {
   getmethods();
@@ -191,6 +193,10 @@ function pnclick(e) {
       $("#falserects").children().remove();
       buildfalse();
     }
+    let full = getfullpn();
+    method = findbypn(full,stage);
+    let text = method ? method.name : "Unnamed method";
+    $("#methodname").text(text);
   }
 }
 
