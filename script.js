@@ -93,6 +93,8 @@ function buildstart(n, plain, right) {
       svg.text($("#endbellnums"), cx, endy+3, places[p-1]);
     }
   }
+
+  let maxx = 600;
   
   //line segments
   //for each change
@@ -164,9 +166,13 @@ function buildstart(n, plain, right) {
         if (pnopts[j] === pnstr) {
           $(text).addClass("selected");
         }
+        if (j === pnopts.length-1) {
+          maxx = Math.max(maxx, startx+j*50+30);
+        }
       }
     }
   }
+  if (maxx > 600) $("#methodgrid").attr("width", maxx);
   let text = plain ? "Plain hunt" : "Treble bob hunt";
   $("#methodname").text(text);
   $("#placenotation g text").on("click", pnclick);
