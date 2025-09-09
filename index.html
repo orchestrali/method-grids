@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Change Ringing Method Grids</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" 
+      type="image/png" 
+      href="https://sallyandbobminor.wordpress.com/wp-content/uploads/2025/07/bristol-major-short.png">
+    
+    
+    
+  </head>
+  <body>
+    <h1>Method Grids</h1>
+    <div id="options">
+      <!--this might actually be a form, to change which bits of the grid are fixed-->
+    </div>
+
+    <div id="methodname"></div>
+    <div id="gridcontainer">
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800" height="800" id="methodgrid">
+    
+        <!--false row highlights-->
+        <g fill="lightpink" id="falserects">
+          
+        </g>
+        
+        <!--treble path-->
+        <g stroke="red" stroke-width="2" fill="none" id="trebleline">
+          
+        </g>
+        
+        <!--palindromic lines-->
+        <g stroke-width="1" fill="none" stroke="#111111" id="palindromelines">
+          
+        </g>
+        
+        <!--fixed lines-->
+        <g stroke-width="2" fill="none" stroke="black" id="fixedlines">
+          
+        </g>
+        
+        <g style="font-family: Arial; font-size: 10pt;" id="placenotation">
+          
+        </g>
+        
+        <!--variable lines-->
+        <g stroke="#aaaaaa" stroke-width="2" id="linklines">
+          
+        </g>
+        
+        
+        <!--treble circles-->
+        <g fill="red" id="treblecircles">
+          
+        </g>
+        <!--treble numbers-->
+        <g style="text-anchor: middle; font-family: Arial; font-size: 8px; fill: #fff; font-weight: 600;" class="bellnums" id="treblenums">
+          
+        </g>
+        
+        <!--starting placebell circles-->
+        <g fill="black" id="placebells" class="bellnums">
+          
+        </g>
+        <!--starting placebell numbers-->
+        <g style="text-anchor: middle; font-family: Arial; font-size: 8px; fill: #fff; font-weight: 600;" class="bellnums" id="placebellnums">
+          
+        </g>
+        
+        <!--ending placebell circles-->
+        <g fill="black" id="endbells" class="bellnums">
+          
+        </g>
+        <!--ending placebell numbers-->
+        <g style="text-anchor: middle; font-family: Arial; font-size: 8px; fill: #fff; font-weight: 600;" class="bellnums" id="endbellnums">
+          
+        </g>
+        
+      </svg>
+    </div>
+    
+  </body>
+</html>
