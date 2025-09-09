@@ -173,7 +173,7 @@ function buildstart(n, plain, right) {
     }
   }
   if (maxx > 600) $("#methodgrid").attr("width", maxx);
-  $("#methodgrid").attr("height", length*16+50);
+  $("#methodgrid").attr("height", length*20+50);
   let text = plain ? "Plain hunt" : "Treble bob hunt";
   $("#methodname").text(text);
   $("#placenotation g text").on("click", pnclick);
