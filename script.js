@@ -359,7 +359,7 @@ function pnstring(pn) {
       nums = false;
     } else {
       if (nums) str += ".";
-      str += rowStr(e);
+      str += rowstring(e);
       nums = true;
     }
   });
