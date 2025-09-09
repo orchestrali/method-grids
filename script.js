@@ -22,6 +22,7 @@ $(function() {
   getmethods();
   $("svg").svg({onLoad: (o) => {svg = o;}});
   buildstart(6, false, true);
+  $("#submit").on("click", submitoptions);
 });
 
 
@@ -35,6 +36,17 @@ function getmethods() {
 function cleargrid() {
   let ids = ["#falserects","#trebleline","#palindromelines","#fixedlines","#placenotation","#linklines","#treblecircles","#treblenums","#placebells","#placebellnums","#endbells","#endbellnums"];
   $("#methodgrid g").contents().remove();
+}
+
+//options: stage, plain, rightplace
+//palindromic and highlightfalse can be separate
+function submitoptions() {
+  cleargrid();
+  let id = $("#stage input:checked").attr("id");
+  let n = places.indexOf(id.slice(-1))+1;
+  let plain = $("#plain").is(":checked");
+  let right = $("#rightplace").is(":checked");
+  buildstart(n, plain, right);
 }
 
 
@@ -155,7 +167,8 @@ function buildstart(n, plain, right) {
       }
     }
   }
-  
+  let text = plain ? "Plain hunt" : "Treble bob hunt";
+  $("#methodname").text(text);
   $("#placenotation g text").on("click", pnclick);
   $("#placebells circle,#placebellnums text").on("click", bellclick);
   if (palindromic) drawpalindrome();
