@@ -17,6 +17,22 @@
     <h1>Method Grids</h1>
     <div id="options">
       <!--this might actually be a form, to change which bits of the grid are fixed-->
+      <div id="stage">
+        Stage: 
+        <label for="stage6"><input type="radio" name="stage" id="stage6" checked />6</label>
+        <label for="stage8"><input type="radio" name="stage" id="stage8" />8</label>
+        <label for="stage0"><input type="radio" name="stage" id="stage0" />10</label>
+        <label for="stageT"><input type="radio" name="stage" id="stageT" />12</label>
+      </div>
+      <div>
+        Treble path:
+        <label for="plain"><input type="radio" name="treblepath" id="plain" />plain hunt</label>
+        <label for="treblebob"><input type="radio" name="treblepath" id="treblebob" checked />treble bob hunt</label>
+      </div>
+      <div>
+        <label for="rightplace"><input type="checkbox" name="rightplace" id="rightplace" />right place</label>
+      </div>
+      <button type="button" id="submit">Go</button>
     </div>
 
     <div id="methodname"></div>
