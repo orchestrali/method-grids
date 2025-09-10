@@ -215,7 +215,15 @@ function pnclick(e) {
     }
     let full = getfullpn();
     method = findbypn(full,stage);
+    let str;
+    if (palindromic) {
+      str = pnstring(full.slice(0, full.length/2));
+      str += "," + rowstring(full[full.length-1]);
+    } else {
+      str = pnstring(full);
+    }
     let text = method ? method.name : "Unnamed method";
+    text += " : " + str;
     $("#methodname").text(text);
   }
 }
