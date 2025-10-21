@@ -23,9 +23,11 @@ $(function() {
   $("svg").svg({onLoad: (o) => {svg = o;}});
   buildstart(6, false, true);
   $("#submit").on("click", submitoptions);
+
+  $("#palindromic").on("click", togglepalindrome);
 });
 
-
+//fetch method info
 function getmethods() {
   $.get("methods.json", function(arr) {
     bigmethodarr = arr;
@@ -33,6 +35,7 @@ function getmethods() {
   });
 }
 
+//remove things from svg groups
 function cleargrid() {
   let ids = ["#falserects","#trebleline","#palindromelines","#fixedlines","#placenotation","#linklines","#treblecircles","#treblenums","#placebells","#placebellnums","#endbells","#endbellnums"];
   $("#methodgrid g").contents().remove();
@@ -183,6 +186,17 @@ function buildstart(n, plain, right) {
   //console.log();
 }
 
+//checkbox click
+function togglepalindrome() {
+  palindromic = $("#palindromic").is(":checked");
+  if (palindromic) {
+    drawpalindrome();
+  } else {
+    $("#palindromelines").contents().remove();
+  }
+}
+
+//click on a place notation
 function pnclick(e) {
   let points = [chosen.length/2-1,chosen.length-1]; //index of HL and LE
   //where was the click? row & pn
