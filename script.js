@@ -29,9 +29,9 @@ $(function() {
 
 //fetch method info
 function getmethods() {
-  $.get("methods.json", function(arr) {
+  $.get("grid-methods.json", function(arr) {
     bigmethodarr = arr;
-    console.log("lists retrieved");
+    console.log("list retrieved");
   });
 }
 
@@ -236,7 +236,7 @@ function pnclick(e) {
     } else {
       str = pnstring(full);
     }
-    let text = method ? method.name : "Unnamed method";
+    let text = method ? method.title : "Unnamed method";
     text += " : " + str;
     $("#methodname").text(text);
   }
@@ -411,7 +411,7 @@ function pnstring(pn) {
 function findbypn(pn, pnstage) {
   let pnstr = pnstring(pn);
   let possible = bigmethodarr.filter(m => m.stage === pnstage);
-  let match = possible.find(m => pnstring(m.plainPN) === pnstr);
+  let match = possible.find(m => pnstring(m.pnFull) === pnstr);
   return match;
 }
 
